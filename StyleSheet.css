@@ -1,19 +1,165 @@
+/* This is to implement a third-party font */
+@font-face {
+    font-family: "poppinsregular";
+    src: url("pfont/Poppins-Medium.ttf");
+}
+
+/* Makes bg blue when window is smaller */
+@media only screen and (max-width: 1000px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+/* Universal application of third party font*/
+* {
+    font-family: 'poppinsregular', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a:active {
+    background-color: green;
+}
+
+/*Selector list and descendant combinator example*/
+div h2, div h3 {
+    text-decoration: underline;
+}
+
+
+
 /* This header will be sticky, meaning that it will stay in position as you scroll up and down the website */
 header {
+    border-style: solid;
+    border-color: rgb(78, 97, 104);
+    border-width: 3px;
+    border-radius: 10px;
     text-align: center;
+    text-decoration: overline underline green;
     position: sticky;
-    top: 0;                     /*This keeps the header at the top*/
-    background-color: white;
+    top: 0.5vw;             /*This keeps the header at the top*/
+    background-color: lightblue;
     z-index: 99;
 }
 
-main {
-    justify-content: center;
-    
+/* WIP: So we left display as none*/
+nav {
+    border-style: solid;
+    background-color: lightblue;
+    position: sticky;
+    top: 120px;
+    z-index: 98;
+    display: none; /* WIP: So we left display as none*/
+    float: left;
 }
 
-#center_main {
-    width: 60%;
-    background-color: lightgray;
+/* Using flex to justify-content center*/
+main {
+    display: flex;
     justify-content: center;
+    width: 100vw;
+}
+
+/* The section where I want the content*/
+#center_main {
+    margin-top: 10px;
+    border-style: solid;
+    border-color: rgb(78, 97, 104);
+    border-width: 3px;
+    border-radius: 10px;
+    padding: 10px;
+    width: 60vw;
+    background-color: aliceblue;
+}
+
+/*Inline example*/
+.meeting_labels {
+    background-color: lightblue;
+    display: inline;
+    margin: 5px;
+    border-width: 1px;
+    border-style: solid;
+    padding-inline-end: 5px;
+    padding-left: 5px;
+    min-width: none;
+}
+
+/*Flex example*/
+.meeting_tags_container {
+    background-color: lightblue;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 10px;
+}
+
+/*Items of container meeting_tags_container*/
+.meeting_tags {
+    margin: 5px;
+    margin-block-end: 1px;
+}
+
+/*Child combinator*/
+.meeting_tags_container > p {
+    text-decoration: underline;
+}
+
+.segment_label {
+    margin-bottom: 5px;
+}
+
+/* Combination combinator ex*/
+p.segment_label {
+    font-weight: bold;
+}
+
+/*Adj sib example*/
+br + img {
+    width: 50%;
+}
+
+/*Gen sib example*/
+br ~ video {
+    width: 50%;
+}
+
+/*Block example*/
+.comment {
+    background-color: lightblue;
+    display: block;
+    margin: 5px;
+    max-width: 500px;
+}
+
+#fields {
+    float: left;
+}
+
+/*attribute selector*/
+label[for="coolness"] {
+    background-color: lightblue;
+}
+
+/*Grid example*/
+#numpad {
+    float: right;
+    display: grid;
+    grid-template-columns: [col1] auto [col2] auto [col3] auto [col4end];
+    grid-template-rows: [row1] auto [row2] auto [row3] auto [row4] auto [row4end];
+    column-gap: 3px;
+    position: relative;
+    top: 40px;
+    right: 60px;
+}
+
+/*Grid example items*/
+.numpad_key {
+    background-color: rgb(148, 195, 211);
+    width: 20px;
+    text-align: center;
+    margin: 5px;
+}
+
+/*Pseudoclass example*/
+.numpad_key:hover {
+    background-color: aliceblue;
 }
